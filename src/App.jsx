@@ -6,6 +6,10 @@ function App() {
 
   return (
     <>
+      <section>
+        <h1>Pokemon</h1>
+        <input type="search" />
+      </section>
     </>
   )
 }
