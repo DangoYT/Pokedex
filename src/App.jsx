@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Pokemon from './Components/Pokemon';
 
 const App = () => {
-  const apiUrl = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=150';
+  const apiUrl = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=9';
   const [pokemonList, setPokemonList] = useState([]);
   const [filteredPokemonList, setFilteredPokemonList] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
