@@ -12,7 +12,7 @@ export default function PokemonData() {
             <img className="pokemon__image" src={pokemon.sprites.front_default} alt="" />
 
             <ul className="pokemon__types">
-                {pokemon.types && pokemon.types.map((type, index) => (
+                {pokemon.types.map((type, index) => (
                     <li key={index} className="pokemon__type">{type.type.name}</li>
                 ))}
             </ul>
@@ -21,24 +21,17 @@ export default function PokemonData() {
             <p className="pokemon__weight">{pokemon.weight}</p>
 
             <ul className="pokemon__abilities">
-                {pokemon.abilities && pokemon.abilities.map((ability, index) => (
+                {pokemon.abilities.map((ability, index) => (
                     <li key={index} className="pokemon__ability">
-                        {ability.ability.name} {ability.is_hidden ? '(oculta)' : ''}
+                        {ability.ability.name}
                     </li>
                 ))}
             </ul>
 
-            <ul className="pokemon__stats">
-                {Array.isArray(pokemon.stats) && pokemon.stats.length > 0 ? (
-                    pokemon.stats.map((stat, index) => (
-                        <li key={index} className="pokemon__stat">
-                            {stat.base_stat}
-                        </li>
-                    ))
-                ) : (
-                    <li className="pokemon__stat">No hay estadísticas disponibles</li>
-                )}
-            </ul>
+            {pokemon.stats.map((stat, index) => (
+                <p className="pokemon__stats" key={index}>{stat.base_stat}</p>
+            ) )}
+
         </div>
     );
 }
