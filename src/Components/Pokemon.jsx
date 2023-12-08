@@ -7,11 +7,10 @@ export default function Pokemon({ pokemon }) {
   const handleClick = () => {
     navigate('/pokemondata', { state: pokemon });
   };
-
   return (
     <div onClick={handleClick}>
       <li key={pokemon.id}>
-        <img src={pokemon.front_default} alt="" />
+        <img src={pokemon.sprites.front_default} alt="" />
         <p>Nombre: {pokemon.name}</p>
         <p>Altura: {pokemon.height}</p>
         <p>Peso: {pokemon.weight}</p>

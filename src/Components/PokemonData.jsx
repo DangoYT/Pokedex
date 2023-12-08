@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import "./pokemon.css"
-
 export default function PokemonData() {
     const location = useLocation();
     const pokemon = location.state;
@@ -10,7 +9,7 @@ export default function PokemonData() {
         <div className="pokemon">
             <p className="pokemon__name">{pokemon.name}</p>
             <span className="pokemon__id">{pokemon.id}</span>
-            <img className="pokemon__image" src={pokemon.front_default} alt="" />
+            <img className="pokemon__image" src={pokemon.sprites.front_default} alt="" />
 
             <ul className="pokemon__types">
                 {pokemon.types && pokemon.types.map((type, index) => (
